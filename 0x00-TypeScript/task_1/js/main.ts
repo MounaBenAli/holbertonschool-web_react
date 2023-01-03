@@ -1,3 +1,4 @@
+//1. Let's build a Teacher interface
 interface Teacher {
     readonly firstName: string;
     readonly lastName: string;
@@ -7,10 +8,12 @@ interface Teacher {
     [possibility: string] : any
 };
 
+//2. Extending the Teacher class
 interface Directors extends Teacher {
   numberOfReports:number;
 };
 
+//3. Printing teachers
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
@@ -23,6 +26,7 @@ export const printTeacher: printTeacherFunction = function(
   return `${letter}. ${lastName}`
 }
 
+//4. Writing a class
 interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInter;
 }
