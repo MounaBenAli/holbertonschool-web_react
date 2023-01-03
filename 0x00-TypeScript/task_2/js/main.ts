@@ -48,6 +48,16 @@ export const createEmployee = function(salary: number | string): Director | Teac
   return new Director;
 }
 
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
+//6. Creating functions specific to employees
+export function isDirector(employee: Director | Teacher): boolean {
+    return (employee instanceof Director);
+};
+
+export function executeWork(employee: Director | Teacher): string {
+    if (employee instanceof Director) {
+        return employee.workDirectorTasks();
+    }
+    if (employee instanceof Teacher) {
+        return employee.workTeacherTasks();
+    }
+};
