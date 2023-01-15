@@ -1,0 +1,30 @@
+.App {
+  --clr-primary: #e01d3f;
+  font: 18px Helvetica, Arial, sans-serif;
+}
+
+.App-header {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ color: var(--clr-primary);
+ font-size: 22px;
+ border-bottom: 3px solid var(--clr-primary);
+}
+
+.App-logo {
+	height: 200px;
+}
+
+.App-body {
+  padding-left: 70px;
+  padding-top: 40px;
+  padding-bottom: 450px;
+}
+
+.App-footer {
+  border-top: 3px solid var(--clr-primary);
+  font-style: italic;
+  text-align: center;
+ }
+ 
