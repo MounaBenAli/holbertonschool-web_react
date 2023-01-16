@@ -31,13 +31,14 @@ module.exports = {
   module: {
     rules: [
         {
-            // rule for js files
+            // rule for js & jsx files
             test: /\.(js|jsx)$/,
             // exclude node_modules
             exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: {
+                    //add the presets for preset-env and preset-react
                     presets: ['@babel/preset-react', '@babel/preset-env']
                   }
             }
