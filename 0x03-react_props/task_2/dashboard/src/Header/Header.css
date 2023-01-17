@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--clr-primary);
+    font-size: 22px;
+    border-bottom: 3px solid var(--clr-primary);
+}
+   
+.App-logo {
+    height: 200px;
+}   
