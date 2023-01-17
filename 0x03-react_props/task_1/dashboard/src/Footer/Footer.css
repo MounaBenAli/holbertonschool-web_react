@@ -1,0 +1,5 @@
+.footer {
+    border-top: 3px solid var(--clr-primary);
+    font-style: italic;
+    text-align: center;
+   }
