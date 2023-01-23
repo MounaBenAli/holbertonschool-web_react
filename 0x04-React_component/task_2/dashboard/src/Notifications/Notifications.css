@@ -1,0 +1,25 @@
+div.Notifications {
+  --clr-primary: #e01d3f;
+  font: 18px Helvetica, Arial, sans-serif;
+}
+
+.menuItem {
+  text-align: right;
+  margin-right: 16px;
+  font-weight: bold;
+}
+
+.Notifications {
+    border: 2px #e01d3f;
+    border-style: dotted;
+    padding: 10px;
+    margin-left: 58rem;
+}
+
+ul li[data-priority='urgent'] {
+    color: #FF0000;
+}
+
+ul li[data-priority='default'] {
+    color: #00008b;
+}
