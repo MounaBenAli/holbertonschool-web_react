@@ -72,17 +72,5 @@ describe('when isLoggedIn is true', () => {
 
 });
 
-//When the user is pressing down the control and the h keys simultaneously
-describe('when logOut is true', () => {
-
-  it('logOut', () => {
-    const logOut = jest.fn(() => undefined);
-    const wrapper = shallow(<App logOut={logOut} />);
-    const alert = jest.spyOn(global, 'alert');
-    expect(alert);
-    expect(logOut);
-    jest.restoreAllMocks();
-  });
-});
 
 

@@ -43,7 +43,6 @@ class App extends Component {
 
   render() {
     const { isLoggedIn } = this.props;
-    const { logOut } = this.props;
 
     return (
       <>
@@ -79,7 +78,7 @@ App.propTypes = {
 
 App.defaultProps = {
   isLoggedIn: false,
-  logOut: () => {},
+  logOut: () => undefined,
 }
 
 
