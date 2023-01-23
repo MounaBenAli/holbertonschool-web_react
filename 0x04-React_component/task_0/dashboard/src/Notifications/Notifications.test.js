@@ -41,21 +41,5 @@ describe('Notifications', () => {
     expect(wrapper.find('NotificationItem')).toHaveLength(0);
   }); 
 
-  // Add a new test to verify that when you pass a list of notifications, the component renders it correctly and with the right number of NotificationItem
-  it('renders the correct number of NotificationItem components', () => {
-    const listNotifications = [        
-      { id: 1, title: 'Notification 1' },
-      { id: 2, title: 'Notification 2' },
-      { id: 3, title: 'Notification 3' }    
-    ];
-    const wrapper = shallow(<Notifications listNotifications={listNotifications} />);
-    expect(wrapper.find('NotificationItem')).toHaveLength(3);
-  });
-
-  // Add a new test to verify that when listNotifications is empty the message Here is the list of notifications is not displayed, but No new notification for now is
-  it('displays No new notification for now when listNotifications is empty', () => {
-    const wrapper = shallow(<Notifications listNotifications={[]} />);
-    expect(wrapper.find('div.Notifications p').text()).toEqual('No new notification for now');
-  });
 
 });

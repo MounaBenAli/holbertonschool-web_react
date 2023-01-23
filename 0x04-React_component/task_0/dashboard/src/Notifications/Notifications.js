@@ -51,7 +51,7 @@ const Notifications = ({ displayDrawer, listNotifications  }) => {
 
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
-  listNotifications: PropTypes.arrayOf(PropTypes.shape(NotificationItemShape)).isRequired,
+  listNotifications: PropTypes.arrayOf(PropTypes.shape(NotificationItemShape)),
 };
 
 Notifications.defaultProps = {
