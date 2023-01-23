@@ -7,7 +7,8 @@ import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 import { getLatestNotification } from '../utils/utils';
-
+import BodySection from '../BodySection/BodySection';
+import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
 
 const listCourses = [
   { id: 1, name: 'ES6', credit: 60 },
@@ -48,22 +49,29 @@ class App extends Component {
       <>
         <Notifications listNotifications={listNotifications} />
             <div className="App">
-
-                {/* Header */}
-                <header className="header">
-                  <Header />
-                </header>
-  
-                {/* Body & Login */}
-                <div className="login">
-                  {isLoggedIn ? <CourseList listCourses={listCourses}/> : <Login />}
-                </div>
-  
-                {/* footer */}
-                <footer className="footer">
+              {/* Header */}
+              <header className="header">
+                <Header />
+              </header>
+              {/* Body & Login & CourseList & BodySection */}
+              <div className="login">
+                  {isLoggedIn ? (
+                      <BodySectionWithMarginBottom title="Course list">
+                        <CourseList listCourses={listCourses}/>
+                      </BodySectionWithMarginBottom>
+                  ) : (
+                      <BodySectionWithMarginBottom title="Log in to continue">
+                        <Login />
+                      </BodySectionWithMarginBottom>
+                  )}
+              </div>
+              <BodySection title="News from the School">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida luctus nulla, et condimentum ante gravida at. Fusce ut nunc eget lacus scelerisque pharetra in vel eros. </p>
+              </BodySection>
+              {/* footer */}
+              <footer className="footer">
                   <Footer />
-                </footer>
-  
+              </footer>
             </div>
        </>
     );
