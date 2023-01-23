@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class BodySection extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,7 @@ class BodySection extends Component {
         );
     }
 }
+
 
 BodySection.propTypes = {
     title: PropTypes.string,
