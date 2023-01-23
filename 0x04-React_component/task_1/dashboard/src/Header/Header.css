@@ -1,0 +1,17 @@
+.header {
+    --clr-primary: #e01d3f;
+    font: 18px Helvetica, Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--clr-primary);
+    font-size: 22px;
+    border-bottom: 2px solid;
+}
+   
+.App-logo {
+    height: 200px;
+}   
