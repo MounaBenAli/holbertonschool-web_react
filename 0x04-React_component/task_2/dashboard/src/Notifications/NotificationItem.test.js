@@ -24,4 +24,17 @@ describe('NotificationItem component', () => {
   });
 });
 
-//Add the tests
+//testing the markAsRead property
+describe('testing the markAsRead property', () => {
+  let wrapper;
+  let mockMarkAsRead;
+  beforeEach(() => {
+    mockMarkAsRead = jest.fn();
+    wrapper = shallow(<NotificationItem id={1} markAsRead={mockMarkAsRead} />);
+  });
+
+  it('calls markAsRead with the correct id when clicked', () => {
+    wrapper.find('li').simulate('click');
+    expect(mockMarkAsRead).toHaveBeenCalledWith(1);
+  });
+});

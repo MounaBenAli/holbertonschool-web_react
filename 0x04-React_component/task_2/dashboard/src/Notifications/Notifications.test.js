@@ -44,4 +44,17 @@ describe('Notifications', () => {
 
 });
 
-//Add the tests
+//testing the function markAsRead
+describe('testing the function markAsRead()', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<Notifications />);
+  });
+
+  it('calls markAsRead and logs the correct message', () => {
+    const spy = jest.spyOn(console, 'log');
+    wrapper.instance().markAsRead(1);
+    expect(spy).toHaveBeenCalledWith('Notification 1 has been marked as read');
+    spy.mockRestore();
+  });
+});
