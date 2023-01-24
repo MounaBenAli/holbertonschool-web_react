@@ -1,0 +1,11 @@
+.login {
+    --clr-primary: #e01d3f;
+    font: 18px Helvetica, Arial, sans-serif;
+}
+
+.login {
+    padding-left: 70px;
+    padding-top: 40px;
+    padding-bottom: 450px;
+    font-weight: bold;
+}
