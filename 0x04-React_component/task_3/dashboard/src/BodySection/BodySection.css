@@ -1,4 +1,11 @@
-#BodySection {
+.BodySection {
     margin-bottom: 40px;
+    padding: 16px;
+    border: 1px solid rgb(237, 238, 238);
+    border-radius: 4px;
+    background-color: #6f5abba1;
 }
 
+.BodySectionWithMarginBottom {
+    margin-bottom: 32px;
+}
