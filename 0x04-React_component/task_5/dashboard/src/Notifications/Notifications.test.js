@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Notifications  from './Notifications';
 
 
@@ -57,4 +57,38 @@ describe('testing the function markAsRead()', () => {
     expect(spy).toHaveBeenCalledWith('Notification 1 has been marked as read');
     spy.mockRestore();
   });
+});
+
+//testing the pure component Notifications: it only updates itself when the new property listNotifications has a longer list of elements than the previously
+describe('Notifications', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<Notifications listNotifications={[]} />);
+  });
+
+  const listNotifications = [
+    { id: 1, type: 'high', html: '<p>Notification 1</p>', value: '' },
+    { id: 2, type: 'medium', html: '', value: 'Notification 2' },
+    { id: 3, type: 'low', html: '', value: 'Notification 3' },
+  ];
+
+  it('should not rerender when updating props with the same list', () => {
+    const wrapper = mount(<Notifications displayDrawer listNotifications={listNotifications} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'render');
+    wrapper.setProps({ listNotifications });
+    wrapper.update();
+    expect(spy).toHaveBeenCalledTimes(0);
+  });
+
+  it('should rerender when updating props with a longer list', () => {
+    const wrapper = mount(<Notifications displayDrawer listNotifications={listNotifications} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'render');
+    wrapper.setProps({ listNotifications: [...listNotifications, { id: 4, type: 'low', html: '', value: 'Notification 4' }] });
+    wrapper.update();
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+
 });
