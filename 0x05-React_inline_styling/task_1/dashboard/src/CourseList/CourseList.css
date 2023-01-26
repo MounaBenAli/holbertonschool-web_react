@@ -1,0 +1,12 @@
+#CourseList th[colspan='2'] {
+    text-align: center;
+}
+      
+#CourseList th {
+    text-align: left;
+    border-bottom: 3px solid rgb(238, 238, 238);
+}
+      
+#CourseList td {
+    text-align: left;
+}

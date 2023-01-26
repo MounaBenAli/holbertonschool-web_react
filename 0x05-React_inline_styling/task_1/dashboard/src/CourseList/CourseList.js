@@ -12,16 +12,6 @@ const styles = StyleSheet.create({
         marginTop: '200px',
         border: '2px solid rgb(238, 238, 238)'
     },
-    colspan: {
-        textAlign: 'center',
-    },
-    th: {
-        textAlign: 'left',
-        borderBottom: '3px solid rgb(238, 238, 238)',
-    },
-    td: {
-        textAlign: 'left',
-    }
 });
 
 
