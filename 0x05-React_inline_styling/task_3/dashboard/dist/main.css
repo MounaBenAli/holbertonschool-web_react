@@ -1,0 +1,12 @@
+.footer {
+    --clr-primary: #e01d3f;
+    font: 18px Helvetica, Arial, sans-serif;
+}
+.footer {
+    border-top: 3px solid var(--clr-primary);
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+   }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5jc3MiLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxzQkFBc0I7SUFDdEIsdUNBQXVDO0FBQzNDO0FBQ0E7SUFDSSx3Q0FBd0M7SUFDeEMsa0JBQWtCO0lBQ2xCLGtCQUFrQjtJQUNsQixpQkFBaUI7R0FDbEIsQyIsInNvdXJjZXMiOlsid2VicGFjazovL2Rhc2hib2FyZC8uL3NyYy9Gb290ZXIvRm9vdGVyLmNzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIuZm9vdGVyIHtcbiAgICAtLWNsci1wcmltYXJ5OiAjZTAxZDNmO1xuICAgIGZvbnQ6IDE4cHggSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjtcbn1cbi5mb290ZXIge1xuICAgIGJvcmRlci10b3A6IDNweCBzb2xpZCB2YXIoLS1jbHItcHJpbWFyeSk7XG4gICAgZm9udC1zdHlsZTogaXRhbGljO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbiAgIH0iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=*/
