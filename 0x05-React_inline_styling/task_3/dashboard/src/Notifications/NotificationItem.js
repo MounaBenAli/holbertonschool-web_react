@@ -2,12 +2,22 @@ import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 
+
+
 const styles = StyleSheet.create({
   urgent: {
     color: '#FF0000',
+    width: '100%',
+    borderBottom: '2px solid black',
+    fontSize: '20px',
+    padding: '10px 8px',
   },
   default: {
     color: '#00008b',
+    width: '100%',
+    borderBottom: '2px solid black',
+    fontSize: '20px',
+    padding: '10px 8px',
   },
 });
 
@@ -18,7 +28,7 @@ class NotificationItem extends PureComponent {
 
     
 
-    if (this.value) {
+    if (value) {
       return ( <li  
                     onClick={this.markAsRead}
                     data-priority={type}
@@ -30,7 +40,8 @@ class NotificationItem extends PureComponent {
     }
     return ( <li  
                   data-priority={type}
-                  dangerouslySetInnerHTML={{__html: html }} 
+                  dangerouslySetInnerHTML={{__html: html }}
+                  className={ (type === 'urgent') ? css(styles.urgent) : css(styles.default)} 
                   onClick={() => markAsRead(id)}
            /> );
   }
