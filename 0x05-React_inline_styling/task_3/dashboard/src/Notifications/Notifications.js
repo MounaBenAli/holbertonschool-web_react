@@ -7,23 +7,34 @@ import NotificationItemShape from './NotificationItemShape';
 import { StyleSheet, css } from 'aphrodite';
 
 
-
 const styles = StyleSheet.create({
   notifications: {
     border: '2px #e01d3f',
     borderStyle: 'dotted',
     padding: '10px',
     marginLeft: '58rem',
-    fontSize: '20px',
+    position: 'absolute',
     width: '100%',
+    height: '100%',
   },
   menuItem: {
     textAlign: 'right',
     marginRight: '16px',
     fontWeight: 'bold',
   },
-
+  ul: {
+    padding: '0',
+  },
+  '@media only screen and (max-width: 900px)': {
+    notifications: {
+      fontSize: '20px',
+    },
+    menuItem: {
+      margin: '0',
+    },
+  },
 });
+
 
 class Notifications extends Component  {
    constructor(props) {
@@ -42,53 +53,53 @@ class Notifications extends Component  {
   render() {
     const { displayDrawer, listNotifications } = this.props;
   
-      return (
-        <>
-              <div className={css(styles.menuItem)}>
-                <p>Your notifications</p>
-              </div>
-              {displayDrawer ? 
-              <div className={css(styles.Notifications)}>  
-                <p>Here is the list of notifications</p>
-                <ul>
-                  {listNotifications.length === 0 ? 
-                      <li>No new notification for now</li> 
-                      : 
-                      listNotifications.map((notification) => (
-                      <NotificationItem 
-                        key={notification.id} 
-                        type={notification.type} 
-                        html={notification.html} 
-                        value={notification.value}
-                        markAsRead={this.markAsRead}
-                    />
-                  ))}
-                </ul>
-                <button
-                  type="button"
-                  aria-label="close"
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    outline: 'none',
-                    color: `#fff`,
-                    float: `right`,
-                    position: `relative`,
-                    top: '-142px',
-                    right: '-16px',
-                    cursor: 'pointer',
-                  }}
-                  onClick={() => console.log('Close button has been clicked')}
-                >
-                  <img
-                    style={{ width: "20px" }}
-                    src={close_icon}
-                    alt="close icon" />
-                </button>
-              </div>
-          : null}
-        </>
-      );
+    return (
+      <>
+        {displayDrawer && 
+          <div className={css(styles.notifications)}>  
+            <div className={css(styles.menuItem)}>
+              <p>Your notifications</p>
+            </div>
+            <p>Here is the list of notifications</p>
+            <ul className={css(styles.ul)}>
+              {listNotifications.length === 0 ? 
+                  <li>No new notification for now</li> 
+                  : 
+                  listNotifications.map((notification) => (
+                  <NotificationItem 
+                    key={notification.id} 
+                    type={notification.type} 
+                    html={notification.html} 
+                    value={notification.value}
+                    markAsRead={this.markAsRead}
+                />
+              ))}
+            </ul>
+            <button
+              type="button"
+              aria-label="close"
+              style={{
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: `#fff`,
+                float: `right`,
+                position: `relative`,
+                top: '-142px',
+                right: '-16px',
+                cursor: 'pointer',
+              }}
+              onClick={() => console.log('Close button has been clicked')}
+            >
+              <img
+                style={{ width: "20px" }}
+                src={close_icon}
+                alt="close icon" />
+            </button>
+          </div>
+        }
+      </>
+    );
   }
 };
 
