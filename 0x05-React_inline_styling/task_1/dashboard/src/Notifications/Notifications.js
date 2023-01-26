@@ -5,7 +5,7 @@ import close_icon from '../assets/close-icon.png';
 import NotificationItem from './NotificationItem';
 import NotificationItemShape from './NotificationItemShape';
 import { StyleSheet, css } from 'aphrodite';
-import './Notifications.css';
+
 
 
 const styles = StyleSheet.create({
@@ -96,7 +96,7 @@ Notifications.propTypes = {
 };
 
 Notifications.defaultProps = {
-  displayDrawer: false,
+  displayDrawer: falsecd,
   listNotifications: [],
 }
 
