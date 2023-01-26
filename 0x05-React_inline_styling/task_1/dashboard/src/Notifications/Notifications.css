@@ -1,0 +1,7 @@
+ul li[data-priority='urgent'] {
+    color: #FF0000;
+}
+
+ul li[data-priority='default'] {
+    color: #00008b;
+}

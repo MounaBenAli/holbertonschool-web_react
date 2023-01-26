@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Notifications.css';
 import { getLatestNotification } from '../utils/utils';
 import close_icon from '../assets/close-icon.png';
 import NotificationItem from './NotificationItem';
@@ -96,7 +97,7 @@ Notifications.propTypes = {
 };
 
 Notifications.defaultProps = {
-  displayDrawer: falsecd,
+  displayDrawer: false,
   listNotifications: [],
 }
 
