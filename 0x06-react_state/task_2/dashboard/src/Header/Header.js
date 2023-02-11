@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
 
 
 class Header extends React.Component {
-    static contextType = AppContext;
     constructor(props) {
         super(props)
     }
@@ -41,5 +40,7 @@ class Header extends React.Component {
         );
     }
 }
-  
-  export default Header;
+
+Header.contextType = AppContext;
+
+export default Header;
