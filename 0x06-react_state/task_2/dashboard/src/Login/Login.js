@@ -35,7 +35,7 @@ function Login() {
 
     const handleLoginSubmit = (event) => {
         event.preventDefault();
-        this.props.logIn(this.state.email, this.state.password);
+        logIn(state.email, state.password);
     };
 
     const handleChangeEmail = (event) => {
