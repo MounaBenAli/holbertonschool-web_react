@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 
-function printBestStudents(grades) {
+export function printBestStudents(grades) {
   const filteredGrades = Immutable.Seq(grades)
     .filter(student => student.score >= 70)
     .map(student => ({
