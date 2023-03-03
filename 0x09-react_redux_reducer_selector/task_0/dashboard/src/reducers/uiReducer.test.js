@@ -1,19 +1,9 @@
-import {uiReducer} from "./uiReducer";
-import {DISPLAY_NOTIFICATION_DRAWER, 
-    HIDE_NOTIFICATION_DRAWER,
-    LOGIN_SUCCESS,
-    LOGIN_FAILURE,
-    LOGOUT 
-} from '../actions/uiActionTypes';
+import {uiReducer, initialState} from "./uiReducer";
+import { DISPLAY_NOTIFICATION_DRAWER } from '../actions/uiActionTypes';
 
 // test suite for the reducer
 describe('uiReducer', () => {
-    const initialState = {
-        isNotificationDrawerVisible: false,
-        isUserLoggedIn: false,
-        user: {}
-    };
-
+   
     // No action is passed
     it('should return the initial state when no action is passed', () => {
         const res = uiReducer(undefined, {});

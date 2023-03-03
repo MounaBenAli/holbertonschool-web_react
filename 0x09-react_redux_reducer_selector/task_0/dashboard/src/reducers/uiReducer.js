@@ -6,7 +6,7 @@ import {DISPLAY_NOTIFICATION_DRAWER,
 } from '../actions/uiActionTypes';
 
 
-const initialState = {
+export const initialState = {
     isNotificationDrawerVisible: false,
     isUserLoggedIn: false,
     user: {}
