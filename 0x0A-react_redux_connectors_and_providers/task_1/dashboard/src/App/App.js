@@ -10,6 +10,10 @@ import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBot
 import { StyleSheet, css } from 'aphrodite';
 import AppContext from './AppContext';	
 import { connect } from 'react-redux';
+import {
+  displayNotificationDrawer,
+  hideNotificationDrawer,
+} from '../actions/uiActionCreators';
 
 const listCourses = [
   { id: 1, name: 'ES6', credit: 60 },
@@ -107,9 +111,9 @@ render() {
       <>
         <Notifications
           listNotifications={this.state.listNotifications}
-          displayDrawer={this.state.displayDrawer}
-          handleDisplayDrawer={this.handleDisplayDrawer}
-          handleHideDrawer={this.handleHideDrawer}
+          displayDrawer={this.props.displayDrawer}
+          handleDisplayDrawer={this.props.displayNotificationDrawer}
+          handleHideDrawer={this.props.hideNotificationDrawer}
           markNotificationAsRead={this.markNotificationAsRead}
         />
         <div className="App">
@@ -137,9 +141,16 @@ render() {
 }
 
 export const mapStateToProps= (state) => ({
+
   isLoggedIn: state.get('isUserLoggedIn'),
-  displayDrawer: state.get('isNotificationDrawerVisible')
+  displayDrawer: state.get('isNotificationDrawerVisible'),
+
 });
 
-connect(mapStateToProps)(App);
+export const mapDispatchToProps = {
+  displayNotificationDrawer,
+  hideNotificationDrawer,
+};
+
+connect(mapStateToProps, mapDispatchToProps)(App);
 export default App;
