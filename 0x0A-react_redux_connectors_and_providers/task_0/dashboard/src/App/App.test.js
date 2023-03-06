@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -8,6 +7,8 @@ import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 import PropTypes from 'prop-types';
 import adapter from '../../config/setupTests';
+import App, { mapStateToProps } from './App';
+import { fromJS } from 'immutable';
 
 
 //test that App renders without crashing
@@ -107,5 +108,20 @@ describe('updates state of displayDrawer to false after calling handleHideDrawer
     wrapper.instance().handleDisplayDrawer();
     wrapper.instance().handleHideDrawer();
     expect(wrapper.state('displayDrawer')).toBe(false);
+  });
+});
+
+//Test MapStateToProps
+describe('testtttts mapStateToProps', () => {
+  it('should return the right object when passing the state { isUserLoggedIn: true }', () => {
+    const state = fromJS({
+      isUserLoggedIn: true,
+    });
+
+    const expected = {
+      isLoggedIn: true,
+    };
+
+    expect(mapStateToProps(state)).toEqual(expected);
   });
 });
