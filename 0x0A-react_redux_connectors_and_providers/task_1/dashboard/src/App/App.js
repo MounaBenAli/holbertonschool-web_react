@@ -39,7 +39,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayDrawer: false,
       email: 'user@example.com',
       password: 'examplepassword',
       isLoggedIn: false,
@@ -51,8 +50,6 @@ class App extends Component {
       ],
     };
     this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
-    this.handleHideDrawer = this.handleHideDrawer.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
     this.componentWillUnmount = this.componentWillUnmount.bind(this);
     this.logIn = this.logIn.bind(this);
@@ -97,13 +94,6 @@ class App extends Component {
     }
 }
 
-  handleDisplayDrawer() {
-    this.setState({ displayDrawer: true });
-}
-
-  handleHideDrawer() {
-    this.setState({ displayDrawer: false });
-}
 
 render() {
   return (
@@ -138,7 +128,21 @@ render() {
     </AppContext.Provider>	
   );
   }
-}
+};
+
+App.propTypes  = {
+  isLoggedIn: PropTypes.bool,
+  displayDrawer: PropTypes.bool,
+  displayNotificationDrawer: PropTypes.func.isRequired,
+  hideNotificationDrawer: PropTypes.func.isRequired,
+};
+
+App.defaultProps = {
+  isLoggedIn: false,
+  displayDrawer: false,
+  displayNotificationDrawer: () => {},
+  hideNotificationDrawer: () => {}
+};
 
 export const mapStateToProps= (state) => ({
 
